@@ -1,0 +1,46 @@
+/* mainstyle.css */
+
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Poppins font */
+    background-size: cover;
+    background-image: url('assets/img/backdrop.jpg');
+    color: #3c3c34; /* Armadillo */
+    margin: 0;
+    padding: 0;
+}
+table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #000000; /* Black border */
+}
+th {
+    background-color: #b91b2d; /* Cardinal Red */
+    color: #ffffff; /* White text */
+}
+h1 {
+    background-color: #b91b2d; /* Cardinal Red */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #c10c23; /* Shiraz Red */
+    text-decoration: none;
+    background-color: #b91b2d; /* Cardinal Red */
+    color: #ffffff; /* White text */
+    padding: 10px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+

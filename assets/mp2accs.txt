@@ -1,0 +1,23 @@
+'client1'@'localhost' IDENTIFIED BY 'clientpass';
+
+Bazil
+Serebii2
+
+Natalia
+nataliam
+Bluegfx01
+
+Hirokatsu
+hirokatsu
+Hiro0bata
+
+Renz Orolfo
+orolforgx@
+Renzorolfo20
+
+frances@gmail.com
+Franceslegasp!1
+
+
+ahyen@gmail.com
+Ahyensant0$

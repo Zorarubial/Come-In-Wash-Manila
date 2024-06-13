@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mt-5">Login</h2>
+        <form action="login.php" method="POST" class="mt-4" id="loginForm">
+            <div class="form-group">
+                <label for="iEmail">Email:</label>
+                <input type="email" id="iEmail" name="iEmail" class="form-control" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address.">
+            </div>
+            <div class="form-group">
+                <label for="iPass">Password:</label>
+                <input type="password" id="iPass" name="iPass" class="form-control" required pattern=".{8,}" title="Password must be at least 8 characters long.">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+            <a href="reg.php" class="btn btn-secondary ml-2">Sign Up</a>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            const form = event.currentTarget;
+            
+            // Check form validity
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            form.classList.add('was-validated');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+
+#3c3c34  rgb(60,60,52)		armadillo
+#b91b2d  rgb(185,27,45)		cardinal red
+#c10c23  rgb(193, 12, 35)	shiraz (red)
+#b09b9e  rgb(176, 155, 158)	dusty gray		

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="assets/img/ciwlogosquare.jpg">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            background-color: maroon;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .header {
+            padding: 20px;
+            background-color: #3c3c34; /* Armadillo */
+            color: #ffffff;
+            width: 100%;
+            text-align: left;
+        }
+        .header img {
+            max-width: 100px; /* Reduce size of logo */
+            height: auto;
+        }
+        .container {
+            background-color: rgba(60, 60, 52, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            margin: 50px auto;
+            box-shadow: 0px 0px 10px rgba(255,255,255,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        input {
+            width: calc(100% - 12px); /* Adjust for input padding */
+            margin-bottom: 10px;
+            padding: 6px;
+            border: 1px solid #ffffff; /* White border */
+            border-radius: 3px;
+            background-color: #3c3c34;
+            color: #ffffff;
+            position: relative; /* To position the icon */
+        }
+        .password-wrapper {
+            position: relative;
+        }
+        .password-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+            width: 20px; /* Set the width of the icon */
+            height: auto; /* Automatically adjust the height */
+            fill: #ffffff; /* Set the color of the icon */
+        }
+        a {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+
+        input[type="submit"] {
+            background-color: #b91b2d; /* Cardinal Red */
+            color: #ffffff;
+            cursor: pointer;
+        }
+        
+        .car-wash-info {
+            background-color: #3c3c34;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .car-wash-info h3 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .car-wash-info p {
+            color: #ffffff;
+        }
+        .hover-link:hover {
+            color: #FFA500; /* Light orange color */
+        }
+        .tabs{
+            /* Float the element to the right */
+            float: right;
+            /* Set the width of the element */
+            width: 300px;
+            /* Ensure the element is displayed as an inline-block */
+            display: inline-block;
+            /* Add some padding if necessary */
+            padding: 10px;
+            /* Optional: add some styling */
+            background-color: #c10c23;
+            text-align: center;
+            text-decoration: none;
+        }
+        .glow-green {
+            border: 2px solid #00ff00; /* Green border */
+            box-shadow: 0 0 5px #00ff00; /* Green glow */
+        }
+        .error {
+            border: 2px solid #ff0000; /* Red border */
+            box-shadow: 0 0 5px #ff0000; /* Red glow */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/img/ciwlogosquare.jpg" alt="CIW Logo">
+        <a target="_blank" class="tabs" href="about.html">About Us</a><br>
+        <a target="_blank" class="tabs" href="contact.html" style="margin-top: -50px;">Contact Us</a>
+    </div>
+    <div class="container">
+        <h2 >Registration Form</h2>
+        <form id="registrationForm" action="reghandlerpdo.php" method="post">
+            <label for="first_name">First Name:</label>
+            <input  type="text" id="first_name" name="first_name" required pattern="[A-Za-z\s]{1,50}$" title="First name should only contain letters" max="50" placeholder="Juan"><br>
+
+            <label for="surname">Surname:</label>
+            <input  type="text" id="surname" name="surname" required pattern="[A-Za-z\s]{1,50}$" title="Surname should only contain letters" max="50" placeholder="Dela Cruz"><br>
+
+            <label for="mobile">Mobile number:</label>
+            <input  type="text" id="mobile" name="mobile" pattern="^(09\d{9})$" required title="Follow this format: 09XXXXXXXXX" placeholder="09271234567"><br>
+
+            <label for="email">Email:</label>
+            <input  type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required placeholder="user12@gmail.com"><br>
+
+            <label for="password">Password:</label>
+            <div class="password-wrapper">
+                <input  type="password" id="password" name="password" required 
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$" title="Password must be at least 8 characters long and contain one uppercase letter, one lowercase letter, one digit, and one special character.">
+                <img src="assets\img\eye.svg" class="password-icon" onclick="togglePasswordVisibility('password')" alt="Show Password">
+            </div>
+            <label style="font-size: 10px;">at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character</label>
+
+            <label for="conpassword">Confirm Password:</label>
+            <div class="password-wrapper">
+                <input  type="password" id="conpassword" name="conpassword" required 
+                >
+                <img src="assets\img\eye.svg" class="password-icon" onclick="togglePasswordVisibility('conpassword')" alt="Show Password">
+            </div>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required><br>
+
+            <label for="province">Province:</label>
+            <input type="text" id="province" name="province" required><br>
+            <a href="terms.html" target="_blank" style="text-align: center;" class="hover-link">Terms and Conditions</a>
+            <a href="privacy_policy.html" target="_blank" style="text-align: center;" class="hover-link">Privacy Policy</a>
+
+            <label style="text-align: center;"> Already have an account? <a href="login.php" style="display: inline-block;" class="hover-link"> Log In</a></label>
+
+            <input style="font-family: 'Poppins', Arial, sans-serif" type="submit" value="Sign Up">
+        </form>
+    </div>
+    <!-- Additional design elements related to car wash service -->
+    <div class="car-wash-info">
+        <h3>Welcome to Come In Wash Manila Online Platform!</h3>
+        <p>First in the Philippines! 🚘 컴인워시 마닐라점 ✨ Car & Bike Wash and Detailing 8:00AM to 10:00 PM, Sundays - Saturdays 📍</p>
+        <i>Roxas Boulevard, Corner Seaside Drive, Parañaque, Metro Manila</i>
+    </div>
+
+   <script>
+    function togglePasswordVisibility(inputId) {
+        var passwordInput = document.getElementById(inputId);
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('conpassword').value;
+        if (password !== confirmPassword) {
+            alert('Passwords do not match. Please try again.');
+            event.preventDefault(); // Prevent the form from submitting
+        }
+
+        var agree = confirm("I agree with Terms & Conditions and Privacy Policy");
+        if (!agree) {
+            event.preventDefault(); // Prevent the form from submitting
+        }
+
+         // Check pattern conditions and add appropriate class
+        var inputs = document.querySelectorAll('input');
+        inputs.forEach(function(input) {
+            if (!input.checkValidity()) {
+                input.classList.remove('glow-green');
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+                input.classList.add('glow-green');
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Capitalize names and address input fields
+    document.getElementById('first_name').addEventListener('input', function() {
+        this.value = capitalizeFirstLetter(this.value);
+    });
+
+    document.getElementById('surname').addEventListener('input', function() {
+        this.value = capitalizeFirstLetter(this.value);
+    });
+
+    document.getElementById('city').addEventListener('input', function() {
+        this.value = capitalizeFirstLetter(this.value);
+    });
+
+    document.getElementById('province').addEventListener('input', function() {
+        this.value = capitalizeFirstLetter(this.value);
+    });
+    });
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+</script>
+
+</body>
+</html>
